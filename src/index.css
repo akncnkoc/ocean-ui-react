@@ -1,0 +1,236 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  #app, #root, body, html {
+    width: 100%;
+    height: 100%;
+    @apply font-normal text-base ;
+  }
+}
+
+
+@layer components {
+  .btn {
+    @apply leading-tight inline-flex items-center justify-center rounded shadow-md focus:outline-none focus:ring-0 transition duration-150 ease-in-out;
+
+    &.xs {
+      @apply py-0.5 px-2 text-xs;
+    }
+
+    &.sm {
+      @apply py-1 px-2 text-sm;
+    }
+
+    &.md {
+      @apply py-1.5 px-2 text-base;
+    }
+
+    &.lg {
+      @apply py-2 px-2 text-lg;
+    }
+
+    &.default {
+      @apply hover:shadow-lg active:shadow-lg focus:shadow-lg;
+    }
+
+    &-primary {
+      &.default {
+        @apply bg-blue-600 text-white hover:bg-blue-700 focus:bg-blue-700 active:bg-blue-800;
+      }
+
+      &.outline {
+        @apply border border-blue-600 text-blue-600 hover:bg-black hover:bg-opacity-5;
+      }
+    }
+
+    &-secondary {
+      &.default {
+        @apply bg-purple-600 text-white hover:bg-purple-700 focus:bg-purple-700 active:bg-purple-800;
+      }
+
+      &.outline {
+        @apply border border-purple-600 text-purple-600 hover:bg-black hover:bg-opacity-5;
+      }
+    }
+
+    &-success {
+      &.default {
+        @apply bg-green-500 text-white hover:bg-green-600 focus:bg-green-600 active:bg-green-700;
+      }
+
+      &.outline {
+        @apply border border-green-500 text-green-500 hover:bg-black hover:bg-opacity-5;
+      }
+    }
+
+    &-danger {
+      &.default {
+        @apply bg-red-600 text-white hover:bg-red-700 focus:bg-red-700 active:bg-red-800;
+      }
+
+      &.outline {
+        @apply border border-red-600 text-red-600 hover:bg-black hover:bg-opacity-5;
+      }
+    }
+
+    &-warning {
+      &.default {
+        @apply bg-yellow-500 text-white hover:bg-yellow-600 focus:bg-yellow-600 active:bg-yellow-700;
+      }
+
+      &.outline {
+        @apply border border-yellow-500 text-yellow-500 hover:bg-black hover:bg-opacity-5;
+      }
+    }
+
+    &-info {
+      &.default {
+        @apply bg-blue-400 text-white hover:bg-blue-500 focus:bg-blue-500 active:bg-blue-600;
+      }
+
+      &.outline {
+        @apply border border-blue-400 text-blue-400 hover:bg-black hover:bg-opacity-5;
+      }
+    }
+
+    &-light {
+      &.default {
+        @apply bg-gray-200 text-white hover:bg-gray-300 focus:bg-gray-300 active:bg-gray-400;
+      }
+
+      &.outline {
+        @apply border border-gray-200 text-gray-800 hover:bg-black hover:bg-opacity-5;
+      }
+    }
+
+    &-dark {
+      &.default {
+        @apply bg-gray-800 text-white hover:bg-gray-900 focus:bg-gray-900 active:bg-gray-900;
+      }
+
+      &.outline {
+        @apply border border-gray-800 text-gray-800 hover:bg-black hover:bg-opacity-5;
+      }
+    }
+
+    &-link {
+      &.default {
+        @apply bg-transparent text-black text-opacity-30 hover:text-opacity-80 hover:bg-black hover:bg-opacity-5 shadow-none;
+      }
+    }
+
+    &.disabled {
+      @apply pointer-events-none opacity-60;
+    }
+
+    &.floating {
+      @apply w-9 h-9 rounded-full;
+    }
+
+  }
+  .badge{
+    @apply py-1 px-2 inline-flex items-center justify-center text-xs rounded border border-transparent transition-colors;
+    &.pill{
+      @apply !rounded-full;
+    }
+    &.link{
+      @apply hover:text-opacity-80 hover:bg-opacity-70 cursor-pointer;
+    }
+    &-primary{
+      &-default{
+        @apply bg-blue-600 text-white;
+      }
+      &-outline{
+        @apply border-blue-600 text-blue-600;
+      }
+    }
+    &-secondary{
+      &-default{
+        @apply bg-purple-600 text-white;
+      }
+      &-outline{
+        @apply border-purple-600 text-purple-600;
+      }
+    }
+    &-success {
+      &-default{
+        @apply bg-green-600 text-white;
+      }
+      &-outline{
+        @apply border-green-600 text-green-600;
+      }
+    }
+    &-info{
+      &-default{
+        @apply bg-blue-400 text-white;
+      }
+      &-outline{
+        @apply border-blue-400 text-blue-400;
+      }
+    }
+    &-warning {
+      &-default{
+        @apply bg-yellow-600 text-white text-opacity-80;
+      }
+      &-outline{
+        @apply border-yellow-600 text-yellow-600;
+      }
+    }
+    &-danger{
+      &-default{
+        @apply bg-red-600 text-white;
+      }
+      &-outline{
+        @apply border-red-600 text-red-600;
+      }
+    }
+    &-light{
+      &-default{
+        @apply bg-gray-200 text-black;
+      }
+      &-outline{
+        @apply border-gray-200 text-black;
+      }
+    }
+    &-dark{
+      &-default{
+        @apply bg-gray-800 text-white;
+      }
+      &-outline{
+        @apply border-gray-800 text-black;
+      }
+    }
+  }
+}
+
+@layer utilities {
+
+  .formtick:checked {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z'/%3e%3c/svg%3e");
+    border-color: transparent;
+    background-size: 100% 100%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+  }
+
+  .scrollbar::-webkit-scrollbar {
+    width: 7px;
+    height: 0;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    box-shadow: rgba(255, 255, 255, 0.3) 0 0 0 1px;
+  }
+
+  .scrollbar:hover::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.45);
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.55);
+  }
+}
